@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>hello this is forms world ... Here i did create, update, delete... with form.py</h1>
+<br>
+<h3>This is for created now id </h3>
+    <div>
+        <form action="{% url 'save_data' %}" method="POST"> {% csrf_token %}
+
+        {{f.as_p}}    <!--as_p   aeta dea next line a ase.. ae khane {{f}} lekhlao kaj hobe but saim line a asbe -->
+
+          <button type="submit">submit</button>
+
+        </form>
+    </div>
+
+<br>
+<h3>This is for update id=2 mane row number 2 </h3>
+
+ <div>
+        <form action="{% url 'updated_data' %}" method="POST"> {% csrf_token %}
+
+        {{f.as_p}}    <!--as_p   aeta dea next line a ase.. ae khane {{f}} lekhlao kaj hobe but saim line a asbe -->
+
+          <button type="submit">submit</button>
+
+        </form>
+    </div>
+
+
+<br>
+<h3>This is for delete jay row number bosabo ta delete hobe </h3>
+
+ <div>
+        <form action="{% url 'delete_data' %}" method="POST"> {% csrf_token %}
+
+        <input type="text" name="id_value">
+          <button type="submit">submit</button>
+
+        </form>
+    </div>
+
+
+</body>
+</html>
